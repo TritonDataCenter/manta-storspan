@@ -1,4 +1,4 @@
-# manta-storspan: create a set of objects on each Manta storage node
+# manta-storspan: create a minimal set of Manta objects spanning all storage servers
 
 Creates test objects in Manta, locates them using a Manta job, and repeats the
 process until at least one object has been created on each storage server.  Upon
@@ -10,6 +10,10 @@ This program is primarily of interest to Manta operators for exercising the data
 path or jobs path with specific backend storage servers.  The program is a
 normal, external Manta client.  By design, it does not use any internal Manta
 interfaces.
+
+Note that this creates an object on each server, not each storage zone.  If a
+server has multiple storage zones, not all of these zones will be covered.
+
 
 ## Installation
 
